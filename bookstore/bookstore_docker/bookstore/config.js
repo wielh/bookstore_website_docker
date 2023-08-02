@@ -54,7 +54,7 @@ export const transporter = nodemailer.createTransport(
 
 // ref: https://blog.hungwin.com.tw/aspnet-google-login/
 export const google_login_ID = "118619557524-26i4t5boire053d9pg59csddkf302tds.apps.googleusercontent.com"
-export const google_login_password = "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"
+export const google_login_password = "***"
 export const google_verify_strategy = new Strategy({
     clientID: google_login_ID,
     clientSecret:  google_login_password,
