@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title> index </title>
+        <link rel= "stylesheet" href= "style.css">
+    </head>
+    <body id="body">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 style="text-align: center;">Welcome to QueenStone bookstore</h1>
+        <% if(!is_user) {%>
+          <h2 style="text-align: center;">Hello, guess</h2>
+        <% } else {%>
+          <h2 style="text-align: center;">Hello, user <%= username %></h2>
+        <% } %>
+        <br>
+        <script type="module">
+          import {button_factory,register_page,login_page,send_email_page,
+            booklist_page, view_all_order_page,about_bookstore_page} from "./button_actions.js";
+          const body = document.getElementById("body");
+          const style = "text-align:center; font-size:20px; height:40px; width:200px";
+
+          let div = document.createElement("div");
+          div.style="width: 650px; margin: 0 auto;"
+          const register_button = button_factory("register",style,register_page);
+          const login_button= button_factory("login",style,login_page);
+          const forget_password_button = button_factory("forget_password",style,send_email_page);
+          div.appendChild(register_button);
+          div.append(" ")
+          div.appendChild(login_button);
+          div.append(" ")
+          div.appendChild(forget_password_button);
+          body.appendChild(div);
+          body.appendChild(document.createElement("br"));
+
+          let div2 = document.createElement("div");
+          div2.style="width: 650px; margin: 0 auto;"
+          const booklist_button = button_factory("booklist",style,booklist_page);
+          const order_button = button_factory("order",style,view_all_order_page);
+          const about_bookstore_button = button_factory("about_bookstore",style,about_bookstore_page);
+          div2.appendChild(booklist_button);
+          div2.append(" ")
+          div2.appendChild(order_button);
+          div2.append(" ")
+          div2.appendChild(about_bookstore_button);
+          body.appendChild(div2);
+          // register, forget_password ,login ,booklist , user_info, about_bookstore
+        </script>
+    </body>
+</html>

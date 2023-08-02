@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title> login page </title>
+        <link rel= "stylesheet">
+
+    </head>
+    <body id="body">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style="text-align: center;font-size:20px;" id="div1">
+            <br>
+            <h2 style="text-align: center;"> How to contant us </h2>
+            <h4 style="text-align: center;"> Address: XXXXXXXXXX </h4>
+            <h4 style="text-align: center;"> Phone: 02-8765-432 </h4>
+            <h4 style="text-align: center;"> Email: qwerty@gmail.com.tw </h4>
+            <script type="module">
+                import {login,button_factory,back_to_index} from "./button_actions.js";
+                const div = document.createElement("div2");
+                // div.className = "wrapper";
+                const style = "text-align: center;font-size:20px;";
+                const index_button = button_factory("home page",style,back_to_index)
+                div.appendChild(index_button);
+                document.getElementById("div1").append(div);
+            </script>
+        </div>
+    </body>
+</html>

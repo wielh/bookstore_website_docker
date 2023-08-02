@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.button_set_1 {
+    width: 300px; /* Try setting this to 400px or something */
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #444444;
+}
+.button_set_2 {
+    display: table-cell;
+}
+.button_set_2_inner {
+    margin-left: 25px;
+    /* Decorative .. */
+    background-color: #cccccc;
+    min-height: 40px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+input{
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 15px;
+}
+
+table, th, td{
+border: 1px solid black;
+margin-left: auto;
+margin-right: auto;
+border-collapse: collapse;
+text-align: center;
+font-size: 20px;
+}

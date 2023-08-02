@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title> booklist </title>
+        <link rel= "stylesheet" href= "style.css">
+    </head>
+    <body id="body">
+        <br>
+        <h1 style="text-align: center;">PurchaseHistory of user <%= username %></h1>
+        <h1 style="text-align: center;">Remain Balance: <%= balance %></h1>
+        <table id="table" style="font-size:30px; width:1300px;" >
+            <colgroup>
+              <col span="1" style="width: 15%;">
+              <col span="1" style="width: 55%;">
+              <col span="1" style="width: 15%;">
+              <col span="1" style="width: 5%;">
+            </colgroup>
+            <tr>
+              <td>index</td>
+              <td>detail</td>
+              <td>price</td>
+              <td>delete</td>
+            </tr>
+            <%
+              if(orders.length>0){
+                orders.forEach(
+                  function(row){   %>
+                    <tr>
+                      <td><%= row.order_index %></td>
+                      <td><%= row.order_detail %></td>
+                      <td><%= row.price %></td>
+                      <td><input type="checkbox" class="cancel_checkbox"></td>
+                    </tr>
+            <%    }
+                );
+              }
+            %>
+        </table>
+        <br>
+        <script type="module">
+          //import {submit,reset,logout} from "../javascript/button_actions.js";
+          import {delete_submit,back_to_index,logout,button_factory} from "./button_actions.js";
+          const div = document.createElement("div");
+          div.className = "wrapper";
+          const style = "text-align: center;font-size:20px;";
+
+          const body = document.getElementById("body");
+          const submit_button = button_factory("submit",style,delete_submit);
+          const logout_button = button_factory("logout",style,logout);
+          const back_to_index_button = button_factory("index",style,back_to_index);
+          div.appendChild(submit_button);
+          div.append(" ")
+          div.appendChild(back_to_index_button);
+          div.append(" ")
+          div.appendChild(logout_button);
+          body.appendChild(div);
+        </script>
+        <!--
+        <div class="wrapper" >
+          <input type="submit"  onclick="submit()" style="text-align: center;font-size:20px;" value="submit">
+          <input type="submit"  onclick="reset()" style="text-align: center;font-size:20px;" value="reset">
+          <input type="submit"  onclick="logout()" style="text-align: center;font-size:20px;" value="logout">
+        </div>-->
+    </body>
+</html>
